@@ -1,0 +1,10 @@
+<login-form
+  *ngIf="loaded$ | async"
+  [disabled]="loading$ | async"
+  (loggingIn)="loggingIn($event)"
+  [formError]="serverError$ | async"
+>
+</login-form>
+<button (click)="testProfile()" mat-raised-button>
+  profile test
+</button>

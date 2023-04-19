@@ -22,12 +22,19 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@routing/*": ["./src/app/modules/routing/website/routing/*"],
+      "@auth-store/*": ["./src/app/modules/routing/website/routing/auth/store/store/*"],
+      "@view/*": ["./src/app/modules/routing/website/view/blocks/*"],
+      "@lb/*": ["./src/app/modules/routing/website/view/blocks/login/components/blocks/login.block/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+
 }

@@ -1,0 +1,32 @@
+<form
+  [formGroup]="form"
+  (input)="onFormChange()"
+  (ngSubmit)="submit()"
+>
+  <h1>Auth on site</h1>
+  <mat-form-field>
+    <mat-label>Login</mat-label>
+    <input matInput formControlName="login" />
+    <mat-error *ngIf="form.hasError('required', 'login')"
+      >these field required</mat-error
+    >
+  </mat-form-field>
+
+  <mat-divider></mat-divider>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" />
+    <mat-error *ngIf="form.hasError('required', 'password')"
+      >This field required
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="green"
+    [disabled]="disabled || form.invalid || !!formError"
+  >
+    Log In
+  </button>
+  <mat-error *ngIf="formError">{{ formError }}</mat-error>
+</form>
